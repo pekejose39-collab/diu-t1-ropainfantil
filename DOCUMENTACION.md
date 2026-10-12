@@ -55,6 +55,23 @@ Todos comparten tres rasgos: compran desde el móvil, tienen poco tiempo y dudan
 
 ## 3. Diseño de la interfaz
 ### 3.1 Mapa de navegación
+```mermaid
+flowchart TD
+    A[Inicio] --> B[Catálogo]
+    B --> C[Detalle del producto]
+    C --> D[Guía de tallas<br/>bottom sheet]
+    D --> C
+    C --> E[Carrito]
+    E --> F[Checkout]
+    F --> G[Confirmación]
+    G --> A
+
+    A <--> B
+    A <--> H[Favoritos / Perfil]
+    B <--> H
+```
+
+El usuario entra por Inicio, explora el Catálogo, abre el Detalle de un producto (donde puede consultar la guía de tallas en un bottom sheet), lo añade al Carrito, paga en Checkout y recibe la Confirmación. La navigation bar permite saltar entre Inicio, Catálogo y Favoritos/Perfil en cualquier momento
 ### 3.2 Wireframes
 ### 3.3 Guía de estilo Material Design 3
 ### 3.4 Prototipo de alta fidelidad
